@@ -10,17 +10,16 @@ module.exports = {
       main: {
         type: 'area',
         options: {
-          widgets: fullConfig
+          widgets: {
+            ratings: {}
+          }
         }
       }
     },
     group: {
       basics: {
         label: 'Basics',
-        fields: [
-          'title',
-          'main'
-        ]
+        fields: [ 'title', 'main' ]
       }
     }
   }
