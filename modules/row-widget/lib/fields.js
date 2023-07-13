@@ -1,4 +1,4 @@
-const config = require('../../../lib/area');
+const { fullConfig } = require('../../../lib/area');
 const fields = {
   columns: {
     label: 'Column layout',
@@ -49,7 +49,7 @@ for (let i = 1; i <= 4; i++) {
     type: 'area',
     contextual: true,
     options: {
-      widgets: config
+      widgets: fullConfig
     },
     ...(colsIf[i] && {
       if: {
