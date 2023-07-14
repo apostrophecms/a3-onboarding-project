@@ -4,13 +4,13 @@ module.exports = {
   // extending a core module creates a new instance of that module type
   // with a new name, but all the same functions
   extend: '@apostrophecms/widget-type',
+  icons: {
+    'view-column-outline': 'ViewColumnOutline'
+  },
   options: {
     label: 'Row Widget',
     icon: 'view-column-outline',
     previewIcon: 'view-column-outline'
-  },
-  icons: {
-    'view-column-outline': 'ViewColumnOutline'
   },
   fields: {
     add: fields
