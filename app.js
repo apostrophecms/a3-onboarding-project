@@ -30,6 +30,9 @@ require('apostrophe')({
     asset: {},
     // The project's first custom page type.
     'default-page': {},
+    'row-widget': {},
+    'deal-widget': {},
+    'ratings-widget': {},
     review: {},
     'review-page': {},
     'all-reviews-widget': {},

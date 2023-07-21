@@ -1,8 +1,15 @@
-@import url('~normalize.css');
-// NOTE: We're using a `.bp-` namespace to indicate these are the boilerplate
-// styles.
-@import './scss/_settings';
-@import './scss/_type';
-@import './scss/_layout';
-@import './scss/_welcome';
-@import './scss/_widgets';
+/*
+Anything in this file will be compiled into the final CSS file.
+Apostrophe automatically includes the index.scss file from any
+module that has a ui/src directory.
+*/
+
+// Add theme SASS variables
+@import './scss/_theme-settings';
+// Add theme fonts and base styles
+@import './scss/_theme-main';
+// Add styling for theme components
+@import './scss/_theme-topbar';
+
+// Add theme framework styles
+@import 'bootstrap';
