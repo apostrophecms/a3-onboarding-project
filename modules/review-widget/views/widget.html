@@ -1,0 +1,43 @@
+{% set data = data.widget %}
+{% if data.displaySingle === true %}
+  {% set review = data._review[0] %}
+  {% if includeImage === true %}
+    {% set image = apos.image.first(review.featuredImage) %}
+    {% if image %}
+      {% set imageUrl = apos.attachment.url(image, {size: 'one-half' }) %}
+    {% else %}
+      {% set imageUrl = 'https://picsum.photos/200' %}
+    {% endif %}
+    {% set imageBlock %}
+      <div class="background-center-center background-cover col-xs-12 col-md-4" style="background-image:url('{{ imageUrl }}')"></div>
+    {% endset %}
+  {% endif %}
+  {% set textBlock %}
+    <div class="col-xs-12 col-md-8 headline-block">
+      <div class="card-body">
+        <h3 class="card-title display-5">
+          <a href="/reviews/{{ review.slug }}" class="text-decoration-none text-dark">{{ review.title }}</a>
+        </h3>
+        <p class="card-text">A review by {{ review.author }}</p>
+      </div>
+    </div>
+{% endset %}
+<container class="container">
+  <section data-review-widget class="border-2 border-bottom border-primary g-0 mb-4 row row-height">
+    {% if data.imagePosition === 'left' %}
+      {{ imageBlock | safe }}
+      {{ textBlock | safe }}
+    {% else %}
+      {{ textBlock | safe }}
+      {{ imageBlock | safe }}
+    {% endif%}
+  </section>
+</container>
+{% else %}
+  <container class="article">
+    <section data-review-widget>
+      {% component 'review-widget:returnReviews' with { category:data.category,
+      time:data.time, number:data.number } %}
+    </section>
+  </container>
+{% endif %}

@@ -1,0 +1,12 @@
+<div class="border-2 border-info border-start row">
+  <div class="mt-4">
+    {% for review in data.reviews %}
+    <div class="article ps-3">
+      <p class="h4">
+        <a href="{{ review._url }}" class="text-decoration-none text-dark">{{review.title}}</a>
+      </p>
+      <hr class="mt-2 text-info bg-info" />
+    </div>
+    {% endfor %}
+  </div>
+</div>
