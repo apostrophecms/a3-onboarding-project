@@ -1,0 +1,9 @@
+{% set stars = data.starsData %}
+{{ apos.log('stars', data) }}
+{% for x in range(1, 6) %}
+  {% if x <= stars %}
+    <i class="fas fa-star"></i>
+  {% else %}
+    <i class="far fa-star"></i>
+  {% endif %}
+{% endfor %}

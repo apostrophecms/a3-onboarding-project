@@ -40,7 +40,7 @@
   "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "^3.0.0",
+    "apostrophe": "^3.39.2",
     "bootstrap": "^5.3.0",
     "normalize.css": "^8.0.1"
   },

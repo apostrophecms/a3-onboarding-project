@@ -59,7 +59,8 @@ module.exports = {
                   label: 'Heading 4 (H4)'
                 }
               ]
-            }
+            },
+            row: {}
           }
         }
       },
@@ -121,7 +122,8 @@ module.exports = {
                       label: 'Heading 4 (H4)'
                     }
                   ]
-                }
+                },
+                row: {}
               },
               columns: 2
             }

@@ -1,0 +1,22 @@
+<!-- Use a helper to get the image. Use the Nunjucks `set` to create a variable -->
+{% set image = apos.image.first(data.widget.image) %}
+
+<!-- Even though the featuredImage field is required, it's possible that the image
+  has been deleted. So we need to check for that. -->
+{% if image %}
+<!-- Take advantage of `{{apos.log()}}` to see what data is available -->
+{# {{ apos.log('widget image data', image) }} #}
+  {% set imageUrl = apos.attachment.url(image, {size: 'one-sixth' }) %}
+  {% set altText = image.alt %}
+{% else %}
+  {% set imageUrl = 'https://picsum.photos/200' %}
+{% endif %}
+
+<section data-review-card-widget class="align-items-center mb-2 border-2 border-bottom border-info row">
+  <div class="col-12 col-md-6 order-last order-md-first">
+    <p class="lead"><a href="{{ data.widget.url }}" class="text-decoration-none">{{ data.widget.title }}</a></p>
+  </div>
+  <div class="col-12 col-md-6">
+    <img class="image-fit-center-center img-fluid" src="{{ imageUrl }}" alt="{{ altText }}">
+  </div>
+</section>
