@@ -31,6 +31,8 @@ require('apostrophe')({
     // The project's first custom page type.
     'default-page': {},
     review: {},
-    'review-page': {}
+    'review-page': {},
+    'all-reviews-widget': {},
+    'review-widget': {}
   }
 });
