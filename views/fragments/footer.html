@@ -34,9 +34,11 @@
                   </div>
               </div>
               <div class="col-lg-4 py-3">
-                  <h2 class="fw-bold h5 mb-4 text-primary text-uppercase">Latest Posts</h2>
-                  <p class="mb-3">
-                         Duis pharetra venenatis felis, ut tincidunt ipsum consequat nec. Fusce et porttitor libero, eu aliquam nisi. Nam finibus ullamcorper semper.</p>
+                  <h2 class="fw-bold h5 mb-4 text-primary text-uppercase">Latest Review</h2>
+          {% component 'review:latestReview' %}
+          <h2 class="fw-bold h5 mb-4 text-primary text-uppercase">Featured Review</h2>
+          <h3 class="fw-bold h6 mb-3"><a href="{{ data.global._featuredPost[0]._url }}">{{ data.global._featuredPost[0].title }}</a></h3>
+          <p class="mb-3">{{ data.global._featuredPost[0].searchSummary | truncate(100) }}</p>
               </div>
               <div class="col-lg-4 py-3"> 
                   <h2 class="fw-bold h5 mb-4 text-primary text-uppercase">Other</h2>

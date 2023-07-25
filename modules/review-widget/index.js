@@ -18,7 +18,6 @@ module.exports = {
       includeImage: {
         type: 'boolean',
         label: 'Include Image?',
-        def: false,
         toggle: {
           true: 'Add image to review card',
           false: 'Show card without image'
@@ -114,20 +113,6 @@ module.exports = {
           displaySingle: false
         }
       }
-    },
-    group: {
-      basics: {
-        label: 'Basics',
-        fields: [ 'displaySingle' ]
-      },
-      single: {
-        label: 'Single Review',
-        fields: [ '_review', 'includeImage', 'imagePosition' ]
-      },
-      list: {
-        label: 'List of Reviews',
-        fields: [ 'category', 'time', 'number' ]
-      }
     }
   },
   components(self) {
@@ -141,11 +126,7 @@ module.exports = {
         /* Because we are not in the `review` module, we need to use `self.apos.modules.review` to access that module. To search the same module, we would use `self.find()`. We only need the 'title', '_url', and 'category' so we are limiting the returned data with `project({})`.
         */
         const reviews = await self.apos.modules.review.find(req, criteria)
-          .project({
-            title: 1,
-            _url: 1,
-            category: 1
-          })
+          .project({ title: 1, _url: 1 })
           .sort({ createdAt: -1 })
           .limit(limit)
           .toArray();

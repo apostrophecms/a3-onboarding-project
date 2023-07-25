@@ -78,5 +78,17 @@ module.exports = {
         fields: [ 'category', 'isFeatured' ]
       }
     }
+  },
+  components(self) {
+    return {
+      async latestReview(req, data) {
+        const post = await self
+          .find(req)
+          .sort({ createdAt: -1 })
+          .limit(1)
+          .toObject();
+        return { post };
+      }
+    };
   }
 };

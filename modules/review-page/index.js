@@ -16,25 +16,26 @@ module.exports = {
     group: {
       basics: {
         label: 'Basics',
-        fields: [ 'displayCategory' ]
+        fields: ['displayCategory']
       }
     }
   },
   methods(self) {
     return {
       async addCategoryChoices(req) {
-        const allReviews = await self.apos.modules.review.find(req)
-          .project({
-            category: 1
-          })
+        const allReviews = await self.apos.modules.review
+          .find(req)
+          .project({ category: 1 })
           .toArray();
-        const uniqueCategories = [ ...new Set(allReviews.map(review => review.category)) ];
+        const uniqueCategories = [
+          ...new Set(allReviews.map((review) => review.category))
+        ];
         return [
           {
             label: 'All',
             value: 'all'
           },
-          ...uniqueCategories.map(category => ({
+          ...uniqueCategories.map((category) => ({
             label: category.charAt(0).toUpperCase() + category.slice(1),
             value: category
           }))
@@ -58,12 +59,16 @@ module.exports = {
         if (piece.category && pages.length > 1) {
           // grab the piece.category and assign it to a variable
           // set to `all` if it's not a string
-          const pieceCategory = typeof piece.category === 'string' ? piece.category : 'all';
+          const pieceCategory =
+            typeof piece.category === 'string' ? piece.category : 'all';
           // find the page with the correct category
           // if we didn't find a page with the correct category
           // use the `chooseParentPage` method of the parent module
           // to assign the fallback page
-          return pages.find((page) => page.displayCategory === pieceCategory) || _super(pages, piece);
+          return (
+            pages.find((page) => page.displayCategory === pieceCategory) ||
+            _super(pages, piece)
+          );
         }
         // if only a single page, use the default behavior
         return _super(pages, piece);

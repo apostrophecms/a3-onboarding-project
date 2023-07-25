@@ -1,7 +1,7 @@
 {% set data = data.widget %}
 {% if data.displaySingle === true %}
   {% set review = data._review[0] %}
-  {% if includeImage === true %}
+  {% if data.includeImage === true %}
     {% set image = apos.image.first(review.featuredImage) %}
     {% if image %}
       {% set imageUrl = apos.attachment.url(image, {size: 'one-half' }) %}
@@ -13,7 +13,8 @@
     {% endset %}
   {% endif %}
   {% set textBlock %}
-    <div class="col-xs-12 col-md-8 headline-block">
+    {% set extraClass = ' ps-3' if data.imagePosition === 'left' %}
+    <div class="col-xs-12 col-md-8 headline-block{{extraClass}}">
       <div class="card-body">
         <h3 class="card-title display-5">
           <a href="/reviews/{{ review.slug }}" class="text-decoration-none text-dark">{{ review.title }}</a>
