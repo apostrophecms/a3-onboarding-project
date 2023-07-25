@@ -1,7 +1,7 @@
 module.exports = {
   extend: '@apostrophecms/widget-type',
   options: {
-    label: 'Review Widget',
+    label: 'Review Widget'
   },
   fields: {
     add: {
@@ -126,7 +126,10 @@ module.exports = {
         /* Because we are not in the `review` module, we need to use `self.apos.modules.review` to access that module. To search the same module, we would use `self.find()`. We only need the 'title', '_url', and 'category' so we are limiting the returned data with `project({})`.
         */
         const reviews = await self.apos.modules.review.find(req, criteria)
-          .project({ title: 1, _url: 1 })
+          .project({
+            title: 1,
+            _url: 1
+          })
           .sort({ createdAt: -1 })
           .limit(limit)
           .toArray();
