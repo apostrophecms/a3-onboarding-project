@@ -1,0 +1,11 @@
+{% fragment pagetreeNavigation() %}
+  <section class="mb-4 topnav">
+    <div class="d-flex flex-wrap gap-5 justify-content-center me-auto ms-auto p-5 text-center">
+      {% for page in data.home._children %}
+        {% if page.visibility === 'public' %}
+            <a href="{{ page._url }}" style="text-decoration: none" class="fs-3 text-dark">{{ page.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+{% endfragment %}

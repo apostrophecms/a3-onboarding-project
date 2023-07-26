@@ -3,6 +3,7 @@
 
 {% import 'fragments/topbar.html' as topbar %}
 {% import 'fragments/footer.html' as footer %}
+{% import 'fragments/navigation.html' as navigation %}
 
 {% set title = data.piece.title or data.page.title %}
 {% block title %}
@@ -23,6 +24,7 @@
 {% block beforeMain %}
   <header>
     {% render topbar.mainArea() %}
+    {% render navigation.pagetreeNavigation() %}
   </header>
   <main class="pr-main">
 {% endblock %}
