@@ -23,25 +23,25 @@ const fields = {
       },
       {
         label: 'Two columns, 33% and 66%',
-        value: '4-8'
-      },
-      {
-        label: 'Two columns, 66% and 33%',
-        value: '8-4'
-      },
-      {
-        label: 'Two columns, 25% and 75%',
         value: '3-9'
       },
       {
-        label: 'Two columns, 75% and 25%',
+        label: 'Two columns, 66% and 33%',
         value: '9-3'
+      },
+      {
+        label: 'Two columns, 25% and 75%',
+        value: '4-8'
+      },
+      {
+        label: 'Two columns, 75% and 25%',
+        value: '8-4'
       }
     ]
   }
 };
 
-const colsIf = [ null, false, [ 2, 3, 4, '4-8', '8-4', '3-9', '9-3' ], [ 3, 4 ], [ 4 ] ];
+const colsIf = [ null, false, [ 2, 3, 4, '3-9', '9-3', '4-8', '8-4' ], [ 3, 4 ], [ 4 ] ];
 
 for (let i = 1; i <= 4; i++) {
   fields[`area${i}`] = {

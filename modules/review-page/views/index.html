@@ -1,0 +1,56 @@
+<!-- Pages should extend the layout to get the header and footer -->
+{% extends "layout.html" %}
+
+<!-- This loads in a macro to help with pagination -->
+{% import '@apostrophecms/pager:macros.html' as pager with context %}
+
+<!-- This is the main content area -->
+{% block main %}
+  <div class="container ms-5 me-5">
+    <h1 class="custom-underline display-6 ps-2 mb-5">Reviews</h1>
+    <div class="row g-3">
+      <!-- This loops through all of the review pieces and displays them -->
+      {% for review in data.pieces %}
+
+        <!-- Use a helper to get the image -->
+        <!-- Use the Nunjucks `set` to create a variable -->
+        {% set image = apos.image.first(review.featuredImage) %}
+
+        <!-- Even though the featuredImage field is required, it's possible that the image has been deleted. So we need to check for that. -->
+        {% if image %}
+          {% set imageUrl = apos.attachment.url(image, {size: 'one-sixth' }) %}
+        {% else %}
+          <!-- Instead of an else you could choose to skip displaying an image. -->
+          {% set imageUrl = 'https://picsum.photos/200' %}
+        {% endif %}
+
+        <!-- This is just to show how to get image details without using the helper -->
+        {% set altText = review.featuredImage.items[0]._image[0].alt %}
+
+        <div class="review col-md-4">
+          <div class="review__image">
+            <img src="{{ imageUrl }}" alt="{{ altText }}">
+          </div>
+          <div class="review__content">
+            {% if review.isFeatured %}
+              <span class="review__featured">Featured</span>
+            {% endif %}
+            <h2 class="review__title"><a href="{{ review._url }}" class=" text-decoration-none text-dark">{{ review.title }}</h2></a>
+            <p class="review__author">Authored by: {{ review.author }}</p>
+          </div>
+        </div>
+
+      {% endfor %}
+    </div>
+
+  <!-- This renders the page navigation -->
+{% if data.totalPages !== 1 %}
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-4 align-self-center bg-info border border-dark border-3 rounded">
+      <p class="fs-3">Review Navigation</p>
+    {{ pager.render({ page: data.currentPage, total: data.totalPages, class: 'fs-3 ms-5' }, data.url) }}
+    </div>
+  </div>
+{% endif %}
+</div>
+{% endblock %}

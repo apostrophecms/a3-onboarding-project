@@ -1,0 +1,20 @@
+<section class="bg-light pb-5 pt-5">
+  <div class="container pb-5 pt-5">
+    <div class="align-items-center row">
+      <!-- always check to make sure the review still exists and has been added -->
+      {% if data.widget._selectedReview.length > 0 %}
+        {% set review = data.widget._selectedReview[0] %}
+        <div class="col-lg">
+          <h2 class="h6 text-primary text-uppercase">Recommended</h2>
+          <p class="text-primary ms-4">{{review._fields.recommender}} says: {{review._fields.recommendation}}
+          </p>
+          <h3 class="fw-bold h2 mb-3">{{review.title}}</h3>
+          <p class="fw-light h4 ms-4">BY: {{ review.author }}</p>
+        </div>
+        <div class="col-lg-auto">
+          <a href="{{ review._url }}" class="btn btn-primary text-uppercase">Read More</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
