@@ -7,5 +7,12 @@ module.exports = {
         }
       }
     };
+  },
+  helpers(self) {
+    return {
+      debugMode() {
+        return process.env.DEBUG === 'true';
+      }
+    };
   }
 };
