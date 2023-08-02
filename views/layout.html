@@ -3,7 +3,6 @@
 
 {% import 'fragments/topbar.html' as topbar %}
 {% import 'fragments/footer.html' as footer %}
-{% import 'fragments/navigation.html' as navigation %}
 
 {% set title = data.piece.title or data.page.title %}
 {% block title %}
@@ -24,8 +23,6 @@
 {% block beforeMain %}
   <header>
     {% render topbar.mainArea() %}
-    {% render navigation.pagetreeNavigation() %}
-    {# {% render navigation.globalNavigation() %} #}
   </header>
   <main class="pr-main">
 {% endblock %}
@@ -35,24 +32,4 @@
   <footer>
     {% render footer.mainArea() %}
   </footer>
-  {# Use module helper to check environment variable #}
-  {% set debugMode = apos.modules['asset'].debugMode() %}
-  {# Breadcrumb trail to the current page or piece. Not on the home page, only in devMode #}
-  {% if data.page and data.page._ancestors.length and debugMode %}
-    <nav class="breadcrumb">
-      {# Loop over the ancestors. #}
-      
-      {% for page in data.page._ancestors %}
-        <a href="{{ page._url }}">{{ page.title }}</a> ➡
-      {% endfor %}
-      {% if data.piece %}
-        {# We're rendering a show page. #}
-        <a href="{{ data.page._url }}">{{ data.page.title }}</a>  ➡
-        <span>{{ data.piece.title }}</span>
-      {% else %}
-        {# We're rendering a normal page. #}
-        <span>{{ data.page.title }}</span>
-      {% endif %}
-    </nav>
-  {% endif %}
 {% endblock %}
