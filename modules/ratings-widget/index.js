@@ -39,6 +39,7 @@ module.exports = {
       async stars(req, data) {
         // Performs any data manipulation of retrieval
         // before it is passed to the component template
+        // In this case, we are just passing the starsData from the widget
         return {
           starsData: data.starsData
         };
