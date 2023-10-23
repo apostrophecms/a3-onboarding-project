@@ -32,6 +32,6 @@ require('apostrophe')({
     'default-page': {},
     'row-widget': {},
     'deal-widget': {},
-    'ratings-widget': {}
+    'rating-widget': {}
   }
 });

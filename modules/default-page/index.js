@@ -11,7 +11,7 @@ module.exports = {
         type: 'area',
         options: {
           widgets: {
-            ratings: {}
+            rating: {}
           }
         }
       }
