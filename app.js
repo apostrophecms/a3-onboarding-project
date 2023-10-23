@@ -1,5 +1,6 @@
 require('apostrophe')({
   shortName: 'a3-onboarding-project',
+  bundles: [ `@apostrophecms/blog` ],
   modules: {
     // Apostrophe module configuration
     // *******************************
@@ -36,6 +37,9 @@ require('apostrophe')({
     review: {},
     'review-page': {},
     'all-reviews-widget': {},
-    'review-widget': {}
+    'review-widget': {},
+    '@apostrophecms/seo': {},
+    '@apostrophecms/blog': {},
+    '@apostrophecms/blog-page': {}
   }
 });
