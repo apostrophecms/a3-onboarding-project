@@ -1,5 +1,4 @@
 const { fullConfig } = require('../../lib/area');
-
 module.exports = {
   extend: '@apostrophecms/page-type',
   options: {
@@ -10,16 +9,14 @@ module.exports = {
       main: {
         type: 'area',
         options: {
-          widgets: {
-            rating: {}
-          }
+          widgets: fullConfig
         }
       }
     },
     group: {
       basics: {
         label: 'Basics',
-        fields: [ 'title', 'main' ]
+        fields: [ 'main' ]
       }
     }
   }

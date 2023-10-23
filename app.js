@@ -32,6 +32,10 @@ require('apostrophe')({
     'default-page': {},
     'row-widget': {},
     'deal-widget': {},
-    'rating-widget': {}
+    'rating-widget': {},
+    review: {},
+    'review-page': {},
+    'all-reviews-widget': {},
+    'review-widget': {}
   }
 });
