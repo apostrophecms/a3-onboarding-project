@@ -147,6 +147,10 @@ module.exports = {
       footer: {
         label: 'Footer',
         fields: ['_featuredPost']
+      },
+      navigation: {
+        label: 'Navigation',
+        fields: [ 'primaryNav' ]
       }
     }
   }
