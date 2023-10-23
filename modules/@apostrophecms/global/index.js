@@ -135,6 +135,61 @@ module.exports = {
           }
         }
       },
+      socialLinks: {
+        label: 'Social Links',
+        type: 'array',
+        titleField: 'label',
+        fields: {
+          add: {
+            label: {
+              label: 'Social Media Name',
+              type: 'string',
+              required: true
+            },
+            url: {
+              label: 'Account URL',
+              type: 'url',
+              required: true
+            },
+            icon: {
+              label: 'Icon',
+              type: 'select',
+              choices: [
+                {
+                  label: 'Facebook',
+                  value: 'fab fa-facebook'
+                },
+                {
+                  label: 'Twitter',
+                  value: 'fab fa-twitter'
+                },
+                {
+                  label: 'Instagram',
+                  value: 'fab fa-instagram'
+                },
+                {
+                  label: 'YouTube',
+                  value: 'fab fa-youtube'
+                },
+                {
+                  label: 'Pinterest',
+                  value: 'fab fa-pinterest'
+                },
+                {
+                  label: 'LinkedIn',
+                  value: 'fab fa-linkedin'
+                },
+                {
+                  label: 'RSS',
+                  value: 'fas fa-rss'
+                }
+              ],
+              required: true,
+              def: 'fa-brands fa-facebook'
+            }
+          }
+        }
+      },
       _featuredPost: {
         label: 'Featured Post',
         type: 'relationship',
@@ -144,13 +199,13 @@ module.exports = {
       }
     },
     group: {
-      footer: {
-        label: 'Footer',
-        fields: ['_featuredPost']
-      },
       navigation: {
         label: 'Navigation',
         fields: [ 'primaryNav' ]
+      },
+      footer: {
+        label: 'Footer',
+        fields: ['_featuredPost', 'quickLinks', 'socialLinks']
       }
     }
   }
