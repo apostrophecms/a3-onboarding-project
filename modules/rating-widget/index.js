@@ -1,7 +1,7 @@
 module.exports = {
   extend: '@apostrophecms/widget-type',
   options: {
-    label: 'Ratings Widget',
+    label: 'Rating Widget',
   },
   fields: {
     add: {

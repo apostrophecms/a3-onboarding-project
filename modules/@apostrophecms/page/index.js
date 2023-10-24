@@ -15,6 +15,10 @@ module.exports = {
       {
         name: 'review-page',
         label: 'Category Pages'
+      },
+      {
+        name: '@apostrophecms/blog-page',
+        label: 'Blog'
       }
     ]
   }
