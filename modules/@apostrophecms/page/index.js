@@ -17,7 +17,7 @@ module.exports = {
         label: 'Category Pages'
       },
       {
-        name: 'blog-page',
+        name: '@apostrophecms/blog-page',
         label: 'Blog'
       }
     ]

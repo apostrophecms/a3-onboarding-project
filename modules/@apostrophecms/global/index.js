@@ -1,4 +1,9 @@
 module.exports = {
+  options: {
+    seoGoogleAnalytics: true,
+    seoGoogleTagManager: true,
+    seoGoogleVerification: true
+  },
   fields: {
     options: {
       seoGoogleAnalytics: true,

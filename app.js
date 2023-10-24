@@ -1,6 +1,6 @@
 require('apostrophe')({
   shortName: 'a3-onboarding-project',
-  bundles: [ `@apostrophecms/blog` ],
+  bundles: [ '@apostrophecms/blog' ],
   modules: {
     // Apostrophe module configuration
     // *******************************
