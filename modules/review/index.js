@@ -90,5 +90,12 @@ module.exports = {
         return { post };
       }
     };
+  },
+  init(self) {
+    self.apos.adminBar.add('customButton', 'Custom', false, {
+      contextUtility: true,
+      icon: 'anchor-icon'
+      }
+    );
   }
 };
