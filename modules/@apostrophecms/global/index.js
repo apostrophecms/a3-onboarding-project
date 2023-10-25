@@ -1,5 +1,5 @@
 module.exports = {
-  options: {
+  options: { 
     seoGoogleAnalytics: true,
     seoGoogleTagManager: true,
     seoGoogleVerification: true
