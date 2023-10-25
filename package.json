@@ -10,7 +10,7 @@
     "serve": "NODE_ENV=production node app",
     "release": "npm install && npm run build && node app @apostrophecms/migration:migrate",
     "dump-db": "mongodump --gzip --archive=./database-backup/onboarding --db onboarding-walkthrough",
-    "copy-db": "mongorestore --gzip --nsFrom=onboarding-poc.* --nsTo=onboarding-walkthrough.* --drop --verbose --archive=./database-backup/onboarding"
+    "copy-db": "mongorestore --gzip --nsFrom=onboarding-walkthrough.* --nsTo=a3-onboarding-project.* --drop --verbose --archive=./database-backup/onboarding"
   },
   "nodemonConfig": {
     "delay": 1000,
