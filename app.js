@@ -32,7 +32,7 @@ require('apostrophe')({
     'default-page': {},
     'row-widget': {},
     'deal-widget': {},
-    'ratings-widget': {},
+    'rating-widget': {},
     review: {},
     'review-page': {},
     'all-reviews-widget': {},
