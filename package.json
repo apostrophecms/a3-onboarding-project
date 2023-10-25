@@ -8,9 +8,7 @@
     "dev": "nodemon",
     "build": "NODE_ENV=production node app @apostrophecms/asset:build",
     "serve": "NODE_ENV=production node app",
-    "release": "npm install && npm run build && node app @apostrophecms/migration:migrate",
-    "copy-db": "mongorestore --gzip --nsInclude=onboarding-poc.* --verbose --archive=./database-backup/onboarding",
-    "dump-db": "mongodump --gzip --archive=./database-backup/onboarding --db onboarding-poc"
+    "release": "npm install && npm run build && node app @apostrophecms/migration:migrate"
   },
   "nodemonConfig": {
     "delay": 1000,
@@ -37,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/apostrophecms/a3-boilerplate"
+    "url": "https://github.com/apostrophecms/a3-onboarding-project"
   },
   "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
@@ -49,8 +47,9 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "eslint": "^8.0.0",
-    "eslint-config-apostrophe": "^4.0.0",
-    "nodemon": "^3.0.1"
+    "eslint": "^7.16.0",
+    "eslint-config-apostrophe": "^3.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "nodemon": "^2.0.7"
   }
 }
