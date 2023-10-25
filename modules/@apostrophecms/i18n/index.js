@@ -8,6 +8,17 @@ module.exports = {
         label: 'Deutsch',
         prefix: '/de'
       }
-    }
+    },
+    adminLocales: [
+      {
+        label: 'English',
+        value: 'en'
+      },
+      {
+        label: 'Deutsch',
+        value: 'de'
+      }
+    ],
+    defaultAdminLocale: 'en'
   }
 };
