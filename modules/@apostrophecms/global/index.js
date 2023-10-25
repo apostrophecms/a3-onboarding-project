@@ -1,9 +1,4 @@
 module.exports = {
-  options: {
-    seoGoogleAnalytics: true,
-    seoGoogleTagManager: true,
-    seoGoogleVerification: true
-  },
   fields: {
     add: {
       // Adding our array field, `primaryNav`
