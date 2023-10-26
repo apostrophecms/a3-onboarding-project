@@ -40,12 +40,8 @@ module.exports = {
             value: category
           }))
         ];
-      }
-    };
-  },
-  extendMethods(self) {
-    return {
-      filterByIndexPage(_super, query, page) {
+      },
+      filterByIndexPage(query, page) {
         // if the page has a category, add it to the query
         // if the page category is `all`, don't modify the query and return all pieces
         if (page.displayCategory && page.displayCategory !== 'all') {
@@ -53,7 +49,11 @@ module.exports = {
         }
         // return the query
         return query;
-      },
+      }
+    };
+  },
+  extendMethods(self) {
+    return {
       chooseParentPage(_super, pages, piece) {
         // if the piece has a category and there is more than one page, assign the correct one
         if (piece.category && pages.length > 1) {
