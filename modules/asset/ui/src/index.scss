@@ -14,6 +14,7 @@ module that has a ui/src directory.
 @import './scss/_theme-reviews';
 // Add styling to fix Bootstrap reset issue
 @import './scss/_theme-bootstrap-fixes';
-
+// Add styling for theme navigation
+@import './scss/_theme-navigation';
 // Add theme framework styles
 @import 'bootstrap';
