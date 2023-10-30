@@ -15,7 +15,7 @@
   </p>
 </div>
 
-This repository is a companion to the [A3 web development tutorials](https://v3.docs.apostrophecms.org/tutorials/introduction.html) available on our documentation site. The series aims to offer a strong foundation for understanding and effectively utilizing ApostropheCMS.
+This repository is a companion to the [A3 web development tutorials](https://v3.docs.apostrophecms.org/tutorials/introduction.html). The series aims to offer a strong foundation for understanding and effectively utilizing ApostropheCMS.
 
 Throughout these tutorials, we'll incrementally build a sample website using the Apostrophe 3 (A3) Essentials starter kit. This project serves as a learning tool, it is not intended as a plug-and-play template for your individual projects.
 
