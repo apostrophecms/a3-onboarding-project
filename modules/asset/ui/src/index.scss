@@ -12,10 +12,12 @@ module that has a ui/src directory.
 @import './scss/_theme-topbar';
 // Add styling for reviews
 @import './scss/_theme-reviews';
-// Add styling to fix Bootstrap reset issue
-@import './scss/_bootstrap-fixes';
 // Add styling for theme navigation
 @import './scss/_theme-navigation';
 
 // Add theme framework styles
 @import 'bootstrap';
+
+// Add styling to fix Bootstrap reset issue
+//should be below @import 'bootstrap'; or it will not work
+@import './scss/_bootstrap-fixes';
